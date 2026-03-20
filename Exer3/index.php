@@ -22,17 +22,17 @@
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $aluno = new Aluno(
+        $pedido = new Pedido(
             $_POST['nome'],
-            $_POST['disciplina'],
-            (float)$_POST['n1'],
-            (float)$_POST['n2'],
-            (float)$_POST['n3']
+            $_POST['quant'],
+            (float)$_POST['precUnit'],
+            $_POST['typeC']
+            
         );
 
 
-        echo "<h3>Resultado:</h3>";
-        echo $aluno->calcularMedia($n1, $n2, $n3);
+        echo "<h3>Calculos:</h3>";
+        echo $pedido->exibir();
     }
     ?>
 </body>
